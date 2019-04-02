@@ -24,22 +24,21 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-// getLength(items, function(length) {
-//   console.log(length);
-// });
+
+// getLength passes the length of the array into the callback.
+function getLength(arr, cb) {
+  return cb(arr.length);
+}
 
 getLength(items, length => {
   console.log(length);
 });
 
 
+// last passes the last item of the array into the callback.
 function last(arr, cb) {
   return cb(arr[arr.length - 1]);
 }
-
-// last(items, function(lastItem) {
-//   console.log(lastItem);
-// });
 
 last(items, (lastItem) => {
   console.log(lastItem);
@@ -51,10 +50,6 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 
-// sumNums(2, 4, function(sum) {
-//   console.log(sum);
-// });
-
 sumNums(2,4, sum => {
   console.log(sum);
 });
@@ -64,9 +59,6 @@ sumNums(2,4, sum => {
   return cb(x * y);
 }
 
-// multiplyNums(2, 4, function(product) {
-//   console.log(product);
-// });
 
 multiplyNums(2, 4, product => {
   console.log(product);
@@ -80,13 +72,8 @@ function contains(item, list, cb) {
   return cb(list.includes(item));
 }
 
-// contains('Notebook', items, function(containedItem) {
-//   console.log(containedItem);
-// });
-
-
-contains('Notebook', items, containedItem => {
-  console.log(containedItem);
+contains('Notebook', items, item => {
+  console.log(item);
 });
 
 /* STRETCH PROBLEM */
