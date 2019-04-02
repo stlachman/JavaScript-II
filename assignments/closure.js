@@ -1,5 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const outerFunction = () => {
+  const x = 2;
+
+  const innerFunction = () => {
+    const y = 2;
+    return x + y;
+  };
+
+  return innerFunction();
+};
+
+outerFunction();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
