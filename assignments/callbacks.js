@@ -78,8 +78,24 @@ contains('Notebook', items, item => {
 
 /* STRETCH PROBLEM */
 
+// removeDuplicates removes all duplicate values from the given array.
+// Pass the duplicate free array to the callback function.
+// Do not mutate the original array.
+
+const numberArray = [1, 2, 3, 4, 5, 2, 3, 5];
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  const duplicateFree = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!duplicateFree.includes(array[i])) {
+      duplicateFree.push(array[i]);
+    }
+  }
+  return cb(duplicateFree);
 }
+
+removeDuplicates(numberArray, function(filteredArray) {
+  console.log(filteredArray);
+});
+
+console.log(numberArray);
